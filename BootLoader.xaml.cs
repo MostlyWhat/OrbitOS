@@ -26,19 +26,22 @@ namespace OrbitOS
     {
         public BootLoader()
         {
+            /// Launches Functions after Program has Started
             InitializeComponent();
             InitialLaunch();
             InitialLogin();
         }
 
+        /// Login Information
         string adminUsername = "admin";
         string adminPassword = "admin";
+        MainWindow mainWindow = new MainWindow();
 
-        private void InitialLaunch()
+        /// Setting Variables after Launch
+        public void InitialLaunch()
         {
             usernameLabel.Content = Environment.UserName;
             contentLocker.Visibility = System.Windows.Visibility.Visible;
-            
         }
 
         private async void InitialLogin()
@@ -89,7 +92,6 @@ namespace OrbitOS
         private void logoutButton(object sender, RoutedEventArgs e)
         {
             contentLocker.Visibility = System.Windows.Visibility.Visible;
-            MainWindow mainWindow = new MainWindow();
             mainWindow.Hide();
             InitialLogin();
         }

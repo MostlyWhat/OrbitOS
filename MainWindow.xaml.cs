@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.ComponentModel;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
@@ -27,14 +30,54 @@ namespace OrbitOS
             InitializeComponent();
         }
 
+        private void LaunchCalculator(object sender, RoutedEventArgs e)
+        {
+            Calculator calculator = new Calculator();
+            calculator.Show();
+        }
+        private void OpenUrl(string url)
+        {
+            try
+            {
+                Process.Start(url);
+            }
+            catch
+            {
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    url = url.Replace("&", "^&");
+                    Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    Process.Start("xdg-open", url);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    Process.Start("open", url);
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
+
         private void LaunchGitHubSite(object sender, RoutedEventArgs e)
         {
-            // Launch the GitHub site...
+            OpenUrl("https://www.github.com/mostlywhat/orbitos");
         }
 
         private void ReportIssues(object sender, RoutedEventArgs e)
         {
-            // deploy some CupCakes...
+            OpenUrl("https://www.github.com/mostlywhat/orbitos/issues");
         }
+
+        private void MainWindowClosing(object sender, CancelEventArgs e)
+        {
+            Calculator calculator = new Calculator();
+            calculator.Hide();
+        }
+
     }
 }

@@ -7,6 +7,7 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:OrbitOS"
         mc:Ignorable="d"
+        Closing="MainWindowClosing"
         Title="MainWindow" Height="450" Width="800">
 
     <mah:MetroWindow.LeftWindowCommands>
@@ -42,7 +43,9 @@
     <Grid>
         <mah:MetroTabControl>
             <TabItem Header="Launch Center">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <mah:Tile Content="Open Calculator" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Click="LaunchCalculator" />
+                </Grid>
             </TabItem>
             <TabItem Header="About" Height="39" VerticalAlignment="Top">
                 <Grid Background="#FFE5E5E5">
