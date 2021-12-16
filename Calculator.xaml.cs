@@ -90,44 +90,64 @@ namespace OrbitOS
             simpleValue.Text = "";
         }
 
-        private void simpleAdd_Click(object sender, RoutedEventArgs e)
+        private async void simpleAdd_Click(object sender, RoutedEventArgs e)
         {
-            double value1Var = Convert.ToDouble(value1.Text);
-            double value2Var = Convert.ToDouble(value2.Text);
-
-            double addSum = value1Var + value2Var;
-
-            simpleValue.Text = addSum.ToString();
+            try
+            {
+                double value1Var = Convert.ToDouble(value1.Text);
+                double value2Var = Convert.ToDouble(value2.Text);
+                double addSum = value1Var + value2Var;
+                simpleValue.Text = addSum.ToString();
+            }
+            catch (System.FormatException)
+            {
+                await this.ShowMessageAsync("OrbitOS Calculator System", "Both Values must not be Empty!");
+            }
         }
 
-        private void simpleSub_Click(object sender, RoutedEventArgs e)
+        private async void simpleSub_Click(object sender, RoutedEventArgs e)
         {
-            double value1Var = Convert.ToDouble(value1.Text);
-            double value2Var = Convert.ToDouble(value2.Text);
-
-            double addSum = value1Var - value2Var;
-
-            simpleValue.Text = addSum.ToString();
+            try
+            {
+                double value1Var = Convert.ToDouble(value1.Text);
+                double value2Var = Convert.ToDouble(value2.Text);
+                double addSum = value1Var - value2Var;
+                simpleValue.Text = addSum.ToString();
+            }
+            catch (System.FormatException)
+            {
+                await this.ShowMessageAsync("OrbitOS Calculator System", "Both Values must not be Empty!");
+            }
         }
 
-        private void simpleMul_Click(object sender, RoutedEventArgs e)
+        private async void simpleMul_Click(object sender, RoutedEventArgs e)
         {
-            double value1Var = Convert.ToDouble(value1.Text);
-            double value2Var = Convert.ToDouble(value2.Text);
-
-            double addSum = value1Var * value2Var;
-
-            simpleValue.Text = addSum.ToString();
+            try
+            {
+                double value1Var = Convert.ToDouble(value1.Text);
+                double value2Var = Convert.ToDouble(value2.Text);
+                double addSum = value1Var * value2Var;
+                simpleValue.Text = addSum.ToString();
+            }
+            catch (System.FormatException)
+            {
+                await this.ShowMessageAsync("OrbitOS Calculator System", "Both Values must not be Empty!");
+            }
         }
 
-        private void simpleDiv_Click(object sender, RoutedEventArgs e)
+        private async void simpleDiv_Click(object sender, RoutedEventArgs e)
         {
-            double value1Var = Convert.ToDouble(value1.Text);
-            double value2Var = Convert.ToDouble(value2.Text);
-
-            double addSum = value1Var / value2Var;
-
-            simpleValue.Text = addSum.ToString();
+            try
+            {
+                double value1Var = Convert.ToDouble(value1.Text);
+                double value2Var = Convert.ToDouble(value2.Text);
+                double addSum = value1Var / value2Var;
+                simpleValue.Text = addSum.ToString();
+            }
+            catch (System.FormatException)
+            {
+                await this.ShowMessageAsync("OrbitOS Calculator System", "Both Values must not be Empty!");
+            }
         }
     }
 }

@@ -35,7 +35,6 @@ namespace OrbitOS
         /// Login Information
         string adminUsername = "admin";
         string adminPassword = "admin";
-        MainWindow mainWindow = new MainWindow();
 
         /// Setting Variables after Launch
         public void InitialLaunch()
@@ -92,7 +91,11 @@ namespace OrbitOS
         private void logoutButton(object sender, RoutedEventArgs e)
         {
             contentLocker.Visibility = System.Windows.Visibility.Visible;
-            mainWindow.Hide();
+            foreach (Window item in App.Current.Windows)
+            {
+                if (item != this)
+                    item.Close();
+            }
             InitialLogin();
         }
 

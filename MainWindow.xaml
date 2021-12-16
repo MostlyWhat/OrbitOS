@@ -44,7 +44,19 @@
         <mah:MetroTabControl>
             <TabItem Header="Launch Center">
                 <Grid Background="#FFE5E5E5">
-                    <mah:Tile Content="Open Calculator" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Click="LaunchCalculator" />
+                    <mah:Tile Content="Open Arithmetic Calculator" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,78,0,0" Click="LaunchCalculator" Width="385">
+
+                    </mah:Tile>
+                    <mah:Tile Content="Open Trigonometric Calculator" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="405,78,0,0" Click="LaunchTrigonometry" Width="385">
+
+                    </mah:Tile>
+                    <mah:Tile Content="Open Conversion Calculator" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,229,0,0" Click="LaunchCalculator" Width="385">
+
+                    </mah:Tile>
+                    <mah:Tile Grid.Column="0" Grid.Row="1" Content="Open Calendar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="405,229,0,0" Click="LaunchCalculator" Width="385">
+
+                    </mah:Tile>
+                    <Label Content="Launch Center" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="780" Height="63" FontSize="36"/>
                 </Grid>
             </TabItem>
             <TabItem Header="About" Height="39" VerticalAlignment="Top">

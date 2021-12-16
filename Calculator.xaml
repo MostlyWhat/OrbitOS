@@ -7,7 +7,7 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:OrbitOS"
         mc:Ignorable="d"
-        Title="Calculator" Height="450" Width="800">
+        Title="Arithmetic Calculator" Height="450" Width="800">
     <Grid>
         <mah:MetroTabControl>
             <TabItem Header="Simple Calculator">

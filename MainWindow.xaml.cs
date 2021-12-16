@@ -35,6 +35,12 @@ namespace OrbitOS
             Calculator calculator = new Calculator();
             calculator.Show();
         }
+
+        private void LaunchTrigonometry(object sender, RoutedEventArgs e)
+        {
+            TrigCalculator trigcalculator = new TrigCalculator();
+            trigcalculator.Show();
+        }
         private void OpenUrl(string url)
         {
             try
