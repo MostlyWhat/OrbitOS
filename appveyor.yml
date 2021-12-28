@@ -21,7 +21,7 @@ configuration: Release
 
 build:
   project: OrbitOS.sln
-  # MSBuild verbosity level
+  parallel: true
   verbosity: normal
 
 after_build:
