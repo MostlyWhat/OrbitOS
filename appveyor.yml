@@ -1,0 +1,48 @@
+image: Visual Studio 2022
+
+version: 1.0.1.{build}
+
+clone_depth: 10
+clone_folder: c:\Projects\OrbitOS
+
+#Skip builing if we only modify text files
+skip_commits:
+  files:
+    - '**/*.md'
+    - '**/*.html'
+    - '**/*.js'
+    - 'appveyor.yml'
+
+# build platform, i.e. x86, x64, Any CPU. This setting is optional.
+platform: Any CPU
+
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+
+# scripts to run before build
+before_build:
+  dotnet restore
+
+build:
+  project: OrbitOS.sln
+  parallel: true
+  verbosity: normal
+
+after_build:
+    mv c:\Projects\OrbitOS\bin\Release c:\Projects\OrbitOS\bin\OrbitOS
+  
+artifacts:
+    - path: bin
+      name: OrbitOS-Build-%APPVEYOR_BUILD_VERSION%
+
+# Publish to Github Release
+deploy:
+  tag: build-%APPVEYOR_BUILD_VERSION%
+  release: OrbitOS Build Version %APPVEYOR_BUILD_VERSION%
+  description: '%APPVEYOR_REPO_COMMIT_MESSAGE%'
+  provider: GitHub
+  auth_token:
+    secure: 7iWhePTcpkzg0Pynluq6yNhX6d+LgL7nu6jDVb0pztNfJ+vI32GgH9XVstPA2E0N
+  on:
+    branch: main
+    APPVEYOR_REPO_TAG: false        # deploy on tag push only
