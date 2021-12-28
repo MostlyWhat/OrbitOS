@@ -2,16 +2,15 @@ image: Visual Studio 2022
 
 version: 1.0.1.{build}
 
-clone_depth: 10
 clone_folder: c:\Projects\OrbitOS
 
-#Skip builing if we only modify text files
-skip_commits:
-  files:
-    - '**/*.md'
-    - '**/*.html'
-    - '**/*.js'
-    - 'appveyor.yml'
+# #Skip builing if we only modify text files
+# skip_commits:
+#   files:
+#     - '**/*.md'
+#     - '**/*.html'
+#     - '**/*.js'
+#     - 'appveyor.yml'
 
 # build platform, i.e. x86, x64, Any CPU. This setting is optional.
 platform: Any CPU
@@ -29,10 +28,10 @@ build:
   verbosity: normal
 
 after_build:
-    mv c:\Projects\OrbitOS\bin\Release c:\Projects\OrbitOS\bin\OrbitOS
+    mv "c:\Projects\OrbitOS\bin\Release\net5.0-windows10.0.18362.0" "c:\Projects\OrbitOS\bin\Release\OrbitOS"
   
 artifacts:
-    - path: bin
+    - path: bin\Release
       name: OrbitOS-Build-%APPVEYOR_BUILD_VERSION%
 
 # Publish to Github Release
