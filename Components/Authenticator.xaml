@@ -1,0 +1,16 @@
+﻿<ui:ContentDialog x:Class="OrbitOS.Authenticator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        Title="OrbitOS Authentication System"
+        PrimaryButtonText="Login"
+        CloseButtonText="Exit"
+        DefaultButton="Primary">
+    
+    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <!-- Content body -->
+        <TextBlock Text="Please Input OrbitOS's Administrator Authentication Credentials" TextWrapping="Wrap" FontSize="14" FontWeight="Normal" />
+        <TextBox x:Name="AuthUsername" Margin="0,15,0,5" ui:ControlHelper.PlaceholderText="Username"></TextBox>
+        <PasswordBox x:Name="AuthPassword" Margin="0,5,0,0" ui:ControlHelper.PlaceholderText="Password"></PasswordBox>
+    </StackPanel>
+</ui:ContentDialog>

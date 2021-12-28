@@ -11,76 +11,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
+using ModernWpf.Controls;
 using System.Text.RegularExpressions;
 
 namespace OrbitOS
 {
     /// <summary>
-    /// Interaction logic for Calculator.xaml
+    /// Interaction logic for ArithCalculator.xaml
     /// </summary>
-    public partial class Calculator : MetroWindow
+    public partial class ArithCalculator : Window
     {
-        public Calculator()
+        public ArithCalculator()
         {
             InitializeComponent();
         }
-
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
-        }
-
-        private void OpenUrl(string url)
-        {
-            try
-            {
-                Process.Start(url);
-            }
-            catch
-            {
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                {
-                    url = url.Replace("&", "^&");
-                    Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
-                }
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-                {
-                    Process.Start("xdg-open", url);
-                }
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-                {
-                    Process.Start("open", url);
-                }
-                else
-                {
-                    throw;
-                }
-            }
-        }
-
-        private void LaunchGitHubSite(object sender, RoutedEventArgs e)
-        {
-            OpenUrl("https://www.github.com/mostlywhat/orbitos");
-        }
-
-        private void ReportIssues(object sender, RoutedEventArgs e)
-        {
-            OpenUrl("https://www.github.com/mostlywhat/orbitos/issues");
-        }
-
-        private void Clear_Click(object sender, RoutedEventArgs e)
-        {
-            AdvancedBox.Text = "";
-        }
-
-        private void Calculate_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void simpleClear_Click(object sender, RoutedEventArgs e)
@@ -101,7 +49,15 @@ namespace OrbitOS
             }
             catch (System.FormatException)
             {
-                await this.ShowMessageAsync("OrbitOS Calculator System", "Both Values must not be Empty!");
+                var dialog = new ContentDialog()
+                {
+                    Title = "OrbitOS Calculator System",
+                    Content = "Both Values must not be Empty!",
+                    CloseButtonText = "OK",
+                    DefaultButton = ContentDialogButton.Close
+                };
+
+                await dialog.ShowAsync();
             }
         }
 
@@ -116,7 +72,15 @@ namespace OrbitOS
             }
             catch (System.FormatException)
             {
-                await this.ShowMessageAsync("OrbitOS Calculator System", "Both Values must not be Empty!");
+                var dialog = new ContentDialog()
+                {
+                    Title = "OrbitOS Calculator System",
+                    Content = "Both Values must not be Empty!",
+                    CloseButtonText = "OK",
+                    DefaultButton = ContentDialogButton.Close
+                };
+
+                await dialog.ShowAsync();
             }
         }
 
@@ -131,7 +95,15 @@ namespace OrbitOS
             }
             catch (System.FormatException)
             {
-                await this.ShowMessageAsync("OrbitOS Calculator System", "Both Values must not be Empty!");
+                var dialog = new ContentDialog()
+                {
+                    Title = "OrbitOS Calculator System",
+                    Content = "Both Values must not be Empty!",
+                    CloseButtonText = "OK",
+                    DefaultButton = ContentDialogButton.Close
+                };
+
+                await dialog.ShowAsync();
             }
         }
 
@@ -146,7 +118,15 @@ namespace OrbitOS
             }
             catch (System.FormatException)
             {
-                await this.ShowMessageAsync("OrbitOS Calculator System", "Both Values must not be Empty!");
+                var dialog = new ContentDialog()
+                {
+                    Title = "OrbitOS Calculator System",
+                    Content = "Both Values must not be Empty!",
+                    CloseButtonText = "OK",
+                    DefaultButton = ContentDialogButton.Close
+                };
+
+                await dialog.ShowAsync();
             }
         }
     }

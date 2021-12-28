@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,78 +13,90 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.ComponentModel;
-using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
+using ModernWpf.Controls;
 
 namespace OrbitOS
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            InitialLaunch();
+            LoginWindow();
+        }
+        public void InitialLaunch()
+        {
+            usernameLabel.Content = Environment.UserName;
+            contentLocker.Visibility = System.Windows.Visibility.Visible;
         }
 
-        private void LaunchCalculator(object sender, RoutedEventArgs e)
+        /// Login Information
+        string adminUsername = "admin";
+        string adminPassword = "admin";
+        private async void LoginWindow()
         {
-            Calculator calculator = new Calculator();
-            calculator.Show();
-        }
+            Authenticator auth = new Authenticator();
+            var authResult = await auth.ShowAsync();
 
-        private void LaunchTrigonometry(object sender, RoutedEventArgs e)
-        {
-            TrigCalculator trigcalculator = new TrigCalculator();
-            trigcalculator.Show();
-        }
-        private void OpenUrl(string url)
-        {
-            try
+            if (authResult == ContentDialogResult.Primary)
             {
-                Process.Start(url);
-            }
-            catch
-            {
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                if (auth.Username == adminUsername && auth.Password == adminPassword)
                 {
-                    url = url.Replace("&", "^&");
-                    Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+                    var dialog = new NormalDialog("OrbitOS Portal Authentication", "Success, Correct Credentials...Starting Program!", "OK");
+                    await dialog.ShowAsync();
+
+                    contentLocker.Visibility = System.Windows.Visibility.Hidden;
                 }
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-                {
-                    Process.Start("xdg-open", url);
-                }
-                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-                {
-                    Process.Start("open", url);
-                }
+
                 else
                 {
-                    throw;
+
+                    var dialog = new TwoButtonDialog("OrbitOS Portal Authentication", "Failure, Invalid Credentials...Locking Program!", "Retry", "Exit", "Close");
+                    var result = await dialog.ShowAsync();
+
+                    if (result == ContentDialogResult.Primary)
+                    {
+                        LoginWindow();
+                    }
+                    else
+                    {
+                        Application.Current.Shutdown();
+                    }
                 }
+
+            }
+
+            else
+            {
+                var dialog = new NormalDialog("OrbitOS Portal Authentication", "Failure, Command Canceled...Exiting Program!", "Exit");
+                await dialog.ShowAsync();
+                Application.Current.Shutdown();
             }
         }
-
-        private void LaunchGitHubSite(object sender, RoutedEventArgs e)
+        private void logoutButton(object sender, RoutedEventArgs e)
         {
-            OpenUrl("https://www.github.com/mostlywhat/orbitos");
+            contentLocker.Visibility = System.Windows.Visibility.Visible;
+            foreach (Window item in App.Current.Windows)
+            {
+                if (item != this)
+                    item.Close();
+            }
+            LoginWindow();
         }
 
-        private void ReportIssues(object sender, RoutedEventArgs e)
+        private void openInterface(object sender, RoutedEventArgs e)
         {
-            OpenUrl("https://www.github.com/mostlywhat/orbitos/issues");
+            LaunchCenter launcher = new LaunchCenter();
+            launcher.Show();
         }
 
-        private void MainWindowClosing(object sender, CancelEventArgs e)
+        private void ClosingProgram(object sender, CancelEventArgs e)
         {
-            Calculator calculator = new Calculator();
-            calculator.Hide();
+            Application.Current.Shutdown();
         }
-
     }
 }

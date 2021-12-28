@@ -1,74 +1,20 @@
-﻿<mah:MetroWindow x:Class="OrbitOS.MainWindow"
+﻿<Window x:Class="OrbitOS.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:local="clr-namespace:OrbitOS"
+        ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
-        Closing="MainWindowClosing"
-        Title="MainWindow" Height="450" Width="800">
-
-    <mah:MetroWindow.LeftWindowCommands>
-        <mah:WindowCommands>
-            <Button Click="LaunchGitHubSite" ToolTip="Open Up the Github Repository">
-                <iconPacks:PackIconModern Width="22"
-                                  Height="22"
-                                  Kind="SocialGithubOctocat" />
-            </Button>
-        </mah:WindowCommands>
-    </mah:MetroWindow.LeftWindowCommands>
-
-    <mah:MetroWindow.RightWindowCommands>
-        <mah:WindowCommands>
-            <Button Click="ReportIssues" Content="Report Issues" ToolTip="Report Issues Found in This Program">
-                <Button.ContentTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <iconPacks:PackIconModern Width="22"
-                                        Height="22"
-                                        VerticalAlignment="Center"
-                                        Kind="Bug" />
-                            <TextBlock Margin="4 0 0 0"
-                         VerticalAlignment="Center"
-                         Text="{Binding}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </Button.ContentTemplate>
-            </Button>
-        </mah:WindowCommands>
-    </mah:MetroWindow.RightWindowCommands>
-
+        Closing="ClosingProgram"
+        Title="OrbitOS Access Portal" Height="450" Width="800">
+    
     <Grid>
-        <mah:MetroTabControl>
-            <TabItem Header="Launch Center">
-                <Grid Background="#FFE5E5E5">
-                    <mah:Tile Content="Open Arithmetic Calculator" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,78,0,0" Click="LaunchCalculator" Width="385">
-
-                    </mah:Tile>
-                    <mah:Tile Content="Open Trigonometric Calculator" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="405,78,0,0" Click="LaunchTrigonometry" Width="385">
-
-                    </mah:Tile>
-                    <mah:Tile Content="Open Conversion Calculator" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,229,0,0" Click="LaunchCalculator" Width="385">
-
-                    </mah:Tile>
-                    <mah:Tile Grid.Column="0" Grid.Row="1" Content="Open Calendar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="405,229,0,0" Click="LaunchCalculator" Width="385">
-
-                    </mah:Tile>
-                    <Label Content="Launch Center" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="780" Height="63" FontSize="36"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="About" Height="39" VerticalAlignment="Top">
-                <Grid Background="#FFE5E5E5">
-                    <Label Content="About OrbitOS" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Segoe UI"/>
-                    <Label Content="Version: 0.0.1 (Alpha)&#xA;State: Partially Stable&#xA;Codename: OpenUtilApp&#xA;Developer: MostlyWhat aka NotPoonpun&#xA;Supervisor: Kru Wambui Karenju&#xD;&#xA;(Copyright 2022 - MostlyWhat)&#xA;" HorizontalAlignment="Center" Margin="0,84,0,0" VerticalAlignment="Top" Height="301" Width="780" FontSize="36"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Help">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-        </mah:MetroTabControl>
-
+        <Label Content="Welcome" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,60,0,0" VerticalAlignment="Top" Height="111" Width="206" FontSize="48"/>
+        <Label Content="Username" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,117,0,0" VerticalAlignment="Top" Height="111" Width="698" FontSize="48" x:Name="usernameLabel"/>
+        <Button Content="Log Out OrbitOS" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Height="50" Width="250" Click="logoutButton"/>
+        <Button Content="Open OrbitOS Interface" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Center" Margin="0,198,0,0" VerticalAlignment="Top" Height="50" Width="250" Click="openInterface"/>
+        <Rectangle HorizontalAlignment="Center" Height="434" Stroke="Black" VerticalAlignment="Center" Width="800" Fill="Black" x:Name="contentLocker"/>
     </Grid>
-</mah:MetroWindow>
+</Window>
