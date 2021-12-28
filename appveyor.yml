@@ -36,7 +36,7 @@ artifacts:
 
 # Publish to Github Release
 deploy:
-  tag: build-%APPVEYOR_REPO_TAG_NAME%
+  tag: build-%APPVEYOR_BUILD_VERSION%
   release: OrbitOS Build Version %APPVEYOR_BUILD_VERSION%
   description: '%APPVEYOR_REPO_COMMIT_MESSAGE%'
   provider: GitHub
