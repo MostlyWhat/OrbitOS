@@ -4,13 +4,13 @@ version: 1.0.1.{build}
 
 clone_folder: c:\Projects\OrbitOS
 
-#Skip builing if we only modify text files
-skip_commits:
-  files:
-    - '**/*.md'
-    - '**/*.html'
-    - '**/*.js'
-    - 'appveyor.yml'
+# #Skip builing if we only modify text files
+# skip_commits:
+#   files:
+#     - '**/*.md'
+#     - '**/*.html'
+#     - '**/*.js'
+#     - 'appveyor.yml'
 
 # build platform, i.e. x86, x64, Any CPU. This setting is optional.
 platform: Any CPU
