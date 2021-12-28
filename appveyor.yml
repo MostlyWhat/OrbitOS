@@ -19,6 +19,10 @@ platform: Any CPU
 # build Configuration, i.e. Debug, Release, etc.
 configuration: Release
 
+# scripts to run before build
+before_build:
+  dotnet restore
+
 build:
   project: OrbitOS.sln
   parallel: true
