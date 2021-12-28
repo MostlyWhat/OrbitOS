@@ -28,7 +28,7 @@ build:
   verbosity: normal
 
 after_build:
-    mv "c:\Projects\OrbitOS\bin\Release\$env:NET_VERSION" "c:\Projects\OrbitOS\bin\Release\OrbitOS"
+    mv "c:\Projects\OrbitOS\bin\Release\net5.0-windows10.0.18362.0" "c:\Projects\OrbitOS\bin\Release\OrbitOS"
   
 artifacts:
     - path: bin\Release
