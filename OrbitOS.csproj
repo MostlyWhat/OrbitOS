@@ -35,4 +35,20 @@
     </Page>
   </ItemGroup>
 
+  <Target Name="AfterPackage" AfterTargets="CopyAllFilesToSingleFolderForPackage" />
+
+  <ItemGroup>
+      <FluentValidationExcludedCultures Include="cs;da;de;es;fa;fi;fr;it;ko;mk;nl;pl;pt;ru;sv;tr;zh-CN">
+          <InProject>false</InProject>
+      </FluentValidationExcludedCultures>
+  </ItemGroup>
+
+  <Target Name="RemoveTranslationsAfterBuild" AfterTargets="AfterBuild">
+      <RemoveDir Directories="@(FluentValidationExcludedCultures->'$(OutputPath)%(Filename)')" />
+  </Target>
+
+  <Target Name="RemoveTranslationsAfterPackage" AfterTargets="AfterPackage">
+      <RemoveDir Directories="@(FluentValidationExcludedCultures->'$(_PackageTempDir)\$(OutputPath)%(Filename)')" />
+  </Target>
+
 </Project>
