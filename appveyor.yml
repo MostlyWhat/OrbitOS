@@ -28,7 +28,7 @@ build:
   verbosity: normal
 
 after_build:
-    mv c:\Projects\OrbitOS\bin\Release\$(NET_VERSION) c:\Projects\OrbitOS\bin\Release\OrbitOS
+    mv c:\Projects\OrbitOS\bin\Release\$env:NET_VERSION c:\Projects\OrbitOS\bin\Release\OrbitOS
   
 artifacts:
     - path: bin\Release
