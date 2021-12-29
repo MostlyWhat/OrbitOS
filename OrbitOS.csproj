@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CefSharp.Wpf" Version="96.0.180" />
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
   </ItemGroup>
 
@@ -26,6 +27,16 @@
     <Compile Update="Components\TwoButtonDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Programs\TrigCalculator.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -33,10 +44,36 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Programs\TrigCalculator.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
   <PropertyGroup>
    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+   <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+   <Authors>MostlyWhat</Authors>
+   <PackageReadmeFile>README.md</PackageReadmeFile>
+   <Company>MostlyWhat</Company>
+   <Description>A Multi-Program Utility-App Bundle</Description>
+   <Copyright>MostlyWhat with All Rights Reserved</Copyright>
+   <PackageProjectUrl>https://github.com/MostlyWhat/OrbitOS</PackageProjectUrl>
+   <RepositoryUrl>https://github.com/MostlyWhat/OrbitOS</RepositoryUrl>
+  </PropertyGroup>
+    
+  <ItemGroup>
+    <AsmInfoFiles Include="$(ProjectRoot)\**\AssemblyInfo.cs"/>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <NewVersion>$(APPVEYOR_BUILD_VERSION)</NewVersion>
   </PropertyGroup>
 
+  <Target Name="UpdateVersion">
+    <FileUpdate Files="@(AsminfoFiles)" Encoding="utf-8"
+        Regex="\[assembly:\s*AssemblyVersion\(.*\)\]"
+        ReplacementText="[assembly: AssemblyVersion(&quot;$(APPVEYOR_BUILD_VERSION)&quot;)]"/>
+  </Target>
+	
 </Project>
