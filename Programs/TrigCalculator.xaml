@@ -9,6 +9,31 @@
         mc:Ignorable="d"
         Title="Trigonometric Calculator" Height="450" Width="800">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="Normal Operations">
+                <Grid>
+                    <Label Content="Normal Operation Trigonometric Calculator" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="780" Height="63" FontSize="36"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Width="385" SelectedIndex="0" x:Name="NormalTrigSet" Height="50" FontSize="24">
+                        <ComboBoxItem Content="Sine Wave - sin()"/>
+                        <ComboBoxItem Content="Cosine Wave - cos()"/>
+                        <ComboBoxItem Content="Tangent Wave - tan()"/>
+                    </ComboBox>
+                    <Label Content="Trigonometric Operator" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="24"/>
+                    <Label Content="Angle Value or Theta" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top" FontSize="24"/>
+                    <TextBox ui:ControlHelper.PlaceholderText="Value 1" PreviewTextInput="NumberValidationTextBox" x:Name="angleValue" HorizontalAlignment="Left" Margin="10,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" Height="50" FontSize="24"/>
+                    <Button Content="Clear Values" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Height="60" Width="385" FontSize="20" Click="NormalClear"/>
+                    <Button Content="Calculate values" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Left" Margin="405,302,0,0" VerticalAlignment="Top" Height="60" Width="385" FontSize="20" Click="NormalCalculate"/>
+                    <TextBox ui:ControlHelper.PlaceholderText="Value 1" PreviewTextInput="NumberValidationTextBox" x:Name="normalOutput" HorizontalAlignment="Left" Margin="405,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" Height="50" FontSize="24"/>
+                    <Label Content="Trigonometric Output" HorizontalAlignment="Left" Margin="405,73,0,0" VerticalAlignment="Top" FontSize="24"/>
+                    <Label Content="Select an Operator, Input Value.&#xD;&#xA;Click Calculate." HorizontalAlignment="Left" Margin="405,202,0,0" VerticalAlignment="Top" FontSize="24" Width="385" Height="76"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Arc Operation">
+                <Grid>
+                    <Label Content="Arc Operations Trignometric Calculator" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="780" Height="63" FontSize="36" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>

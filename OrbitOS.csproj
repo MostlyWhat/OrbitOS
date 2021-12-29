@@ -36,6 +36,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="OrbitOS.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -75,6 +79,7 @@
 
   <PropertyGroup>
     <NewVersion>$(APPVEYOR_BUILD_VERSION)</NewVersion>
+    <PackageIcon>OrbitOS.png</PackageIcon>
   </PropertyGroup>
 
   <Target Name="UpdateVersion">

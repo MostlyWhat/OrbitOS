@@ -31,103 +31,61 @@ namespace OrbitOS
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void simpleClear_Click(object sender, RoutedEventArgs e)
+        private void NormalClear(object sender, RoutedEventArgs e)
         {
-            value1.Text = "";
-            value2.Text = "";
-            simpleValue.Text = "";
+            angleValue.Text = "";
         }
-
-        private async void simpleAdd_Click(object sender, RoutedEventArgs e)
+        private async void NormalCalculate(object sender, RoutedEventArgs e)
         {
-            try
+            string normalOperator = NormalTrigSet.Text;
+
+            if (normalOperator == "Sine Wave - sin()")
             {
-                double value1Var = Convert.ToDouble(value1.Text);
-                double value2Var = Convert.ToDouble(value2.Text);
-                double addSum = value1Var + value2Var;
-                simpleValue.Text = addSum.ToString();
-            }
-            catch (System.FormatException)
-            {
-                var dialog = new ContentDialog()
+                try
                 {
-                    Title = "OrbitOS Calculator System",
-                    Content = "Both Values must not be Empty!",
-                    CloseButtonText = "OK",
-                    DefaultButton = ContentDialogButton.Close
-                };
-
-                await dialog.ShowAsync();
-            }
-        }
-
-        private async void simpleSub_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                double value1Var = Convert.ToDouble(value1.Text);
-                double value2Var = Convert.ToDouble(value2.Text);
-                double addSum = value1Var - value2Var;
-                simpleValue.Text = addSum.ToString();
-            }
-            catch (System.FormatException)
-            {
-                var dialog = new ContentDialog()
+                    double normalAnswer = Math.Sin(Convert.ToDouble(angleValue.Text));
+                    normalOutput.Text = normalAnswer.ToString();
+                }
+                catch (System.FormatException)
                 {
-                    Title = "OrbitOS Calculator System",
-                    Content = "Both Values must not be Empty!",
-                    CloseButtonText = "OK",
-                    DefaultButton = ContentDialogButton.Close
-                };
-
-                await dialog.ShowAsync();
+                    var dialog = new NormalDialog("OrbitOS Calculator System", "Selector and Degrees must not be Empty!", "OK");
+                    await dialog.ShowAsync();
+                }
             }
-        }
 
-        private async void simpleMul_Click(object sender, RoutedEventArgs e)
-        {
-            try
+            else if (normalOperator == "Cosine Wave - cos()")
             {
-                double value1Var = Convert.ToDouble(value1.Text);
-                double value2Var = Convert.ToDouble(value2.Text);
-                double addSum = value1Var * value2Var;
-                simpleValue.Text = addSum.ToString();
-            }
-            catch (System.FormatException)
-            {
-                var dialog = new ContentDialog()
+                try
                 {
-                    Title = "OrbitOS Calculator System",
-                    Content = "Both Values must not be Empty!",
-                    CloseButtonText = "OK",
-                    DefaultButton = ContentDialogButton.Close
-                };
-
-                await dialog.ShowAsync();
-            }
-        }
-
-        private async void simpleDiv_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                double value1Var = Convert.ToDouble(value1.Text);
-                double value2Var = Convert.ToDouble(value2.Text);
-                double addSum = value1Var / value2Var;
-                simpleValue.Text = addSum.ToString();
-            }
-            catch (System.FormatException)
-            {
-                var dialog = new ContentDialog()
+                    double normalAnswer = Math.Cos(Convert.ToDouble(angleValue.Text));
+                    normalOutput.Text = normalAnswer.ToString();
+                }
+                catch (System.FormatException)
                 {
-                    Title = "OrbitOS Calculator System",
-                    Content = "Both Values must not be Empty!",
-                    CloseButtonText = "OK",
-                    DefaultButton = ContentDialogButton.Close
-                };
+                    var dialog = new NormalDialog("OrbitOS Calculator System", "Selector and Degrees must not be Empty!", "OK");
+                    await dialog.ShowAsync();
+                }
+            }
 
-                await dialog.ShowAsync();
+            else if (normalOperator == "Tangent Wave - tan()")
+            {
+                try
+                {
+                    double normalAnswer = Math.Tan(Convert.ToDouble(angleValue.Text));
+                    normalOutput.Text = normalAnswer.ToString();
+                }
+                catch (System.FormatException)
+                {
+                    var dialog = new NormalDialog("OrbitOS Calculator System", "Selector and Degrees must not be Empty!", "OK");
+                    await dialog.ShowAsync();
+                }
+            }
+
+            else
+            {
+                normalOutput.Text = "0";
             }
         }
+
     }
 }

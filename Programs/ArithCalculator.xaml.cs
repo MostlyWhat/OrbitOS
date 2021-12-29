@@ -49,14 +49,7 @@ namespace OrbitOS
             }
             catch (System.FormatException)
             {
-                var dialog = new ContentDialog()
-                {
-                    Title = "OrbitOS Calculator System",
-                    Content = "Both Values must not be Empty!",
-                    CloseButtonText = "OK",
-                    DefaultButton = ContentDialogButton.Close
-                };
-
+                var dialog = new NormalDialog("OrbitOS Calculator System", "Both Values must not be Empty!", "OK");
                 await dialog.ShowAsync();
             }
         }
@@ -72,14 +65,7 @@ namespace OrbitOS
             }
             catch (System.FormatException)
             {
-                var dialog = new ContentDialog()
-                {
-                    Title = "OrbitOS Calculator System",
-                    Content = "Both Values must not be Empty!",
-                    CloseButtonText = "OK",
-                    DefaultButton = ContentDialogButton.Close
-                };
-
+                var dialog = new NormalDialog("OrbitOS Calculator System", "Both Values must not be Empty!", "OK");
                 await dialog.ShowAsync();
             }
         }
@@ -95,14 +81,7 @@ namespace OrbitOS
             }
             catch (System.FormatException)
             {
-                var dialog = new ContentDialog()
-                {
-                    Title = "OrbitOS Calculator System",
-                    Content = "Both Values must not be Empty!",
-                    CloseButtonText = "OK",
-                    DefaultButton = ContentDialogButton.Close
-                };
-
+                var dialog = new NormalDialog("OrbitOS Calculator System", "Both Values must not be Empty!", "OK");
                 await dialog.ShowAsync();
             }
         }
@@ -118,14 +97,7 @@ namespace OrbitOS
             }
             catch (System.FormatException)
             {
-                var dialog = new ContentDialog()
-                {
-                    Title = "OrbitOS Calculator System",
-                    Content = "Both Values must not be Empty!",
-                    CloseButtonText = "OK",
-                    DefaultButton = ContentDialogButton.Close
-                };
-
+                var dialog = new NormalDialog("OrbitOS Calculator System", "Both Values must not be Empty!", "OK");
                 await dialog.ShowAsync();
             }
         }

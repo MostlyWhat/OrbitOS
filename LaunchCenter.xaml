@@ -12,7 +12,7 @@
         <TabControl>
             <TabItem Header="Launch Center">
                 <Grid Background="Black">
-                    <ComboBox Width="272" VerticalAlignment="Center" HorizontalAlignment="Center" Height="35" x:Name="ProgramSelector">
+                    <ComboBox Width="272" VerticalAlignment="Center" SelectedIndex="0" HorizontalAlignment="Center" Height="35" x:Name="ProgramSelector">
                         <ComboBoxItem Content="Arithmetic Calculator"/>
                         <ComboBoxItem Content="Trigonometric Calculator"/>
                         <ComboBoxItem Content="Text Document Editor"/>
