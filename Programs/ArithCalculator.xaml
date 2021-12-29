@@ -18,7 +18,7 @@
         <Label Content="Output Data" HorizontalAlignment="Left" Margin="400,10,0,0" VerticalAlignment="Top" Height="61" Width="390" FontSize="48"/>
         <TextBox ui:ControlHelper.Header="Enter Value 1:" ui:ControlHelper.PlaceholderText="Value 1" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="10,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="377" Height="78" FontSize="22" x:Name="value1"/>
         <TextBox ui:ControlHelper.Header="Enter Value 2:" ui:ControlHelper.PlaceholderText="Value 2" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="10,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="377" Height="80" FontSize="22" x:Name="value2"/>
-        <TextBox ui:ControlHelper.PlaceholderText="Output Value" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="400,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" Height="45" FontSize="22" x:Name="simpleValue"/>
-        <Label Content="Enter Value 1 and 2&#xD;&#xA;Press Operations to Calculate&#xD;&#xA;Look at Output Value for Answer" HorizontalAlignment="Left" Margin="402,161,0,0" VerticalAlignment="Top" Height="92" Width="380" FontSize="20" FontWeight="Bold"/>
+        <TextBox ui:ControlHelper.Header="Output Value:" ui:ControlHelper.PlaceholderText="Output Value" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="400,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" Height="78" FontSize="22" x:Name="simpleValue"/>
+        <Label Content="Enter Value 1 and 2&#xD;&#xA;Press Operations to Calculate&#xD;&#xA;Look at Output Value for Answer" HorizontalAlignment="Left" Margin="402,161,0,0" VerticalAlignment="Top" Height="80" Width="380" FontSize="20" FontWeight="Bold"/>
     </Grid>
 </Window>

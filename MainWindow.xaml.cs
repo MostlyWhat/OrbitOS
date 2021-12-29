@@ -72,8 +72,6 @@ namespace OrbitOS
 
             else
             {
-                var dialog = new NormalDialog("OrbitOS Portal Authentication", "Failure, Command Canceled...Exiting Program!", "Exit");
-                await dialog.ShowAsync();
                 Application.Current.Shutdown();
             }
         }
