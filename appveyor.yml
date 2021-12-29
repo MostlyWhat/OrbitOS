@@ -1,6 +1,6 @@
 image: Visual Studio 2022
 
-version: {build}.0.0.0
+version: 0.0.{build}.{branch}
 
 skip_tags: true
 clone_folder: c:\Projects\OrbitOS
