@@ -27,6 +27,9 @@
     <Compile Update="Components\TwoButtonDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Programs\AppTemplate.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Programs\TrigCalculator.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -41,6 +44,10 @@
 
   <ItemGroup>
     <Page Update="Components\TwoButtonDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Programs\AppTemplate.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
@@ -63,7 +70,7 @@
   </PropertyGroup>
     
   <ItemGroup>
-    <AsmInfoFiles Include="$(ProjectRoot)\**\AssemblyInfo.cs"/>
+    <AsmInfoFiles Include="$(ProjectRoot)\**\AssemblyInfo.cs" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -71,9 +78,7 @@
   </PropertyGroup>
 
   <Target Name="UpdateVersion">
-    <FileUpdate Files="@(AsminfoFiles)" Encoding="utf-8"
-        Regex="\[assembly:\s*AssemblyVersion\(.*\)\]"
-        ReplacementText="[assembly: AssemblyVersion(&quot;$(APPVEYOR_BUILD_VERSION)&quot;)]"/>
+    <FileUpdate Files="@(AsminfoFiles)" Encoding="utf-8" Regex="\[assembly:\s*AssemblyVersion\(.*\)\]" ReplacementText="[assembly: AssemblyVersion(&quot;$(APPVEYOR_BUILD_VERSION)&quot;)]" />
   </Target>
 	
 </Project>

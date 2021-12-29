@@ -35,10 +35,35 @@ namespace OrbitOS
                 arith.Show();
             }
 
-            //else if (selectedProgram == "Trigonometric Calculator")
-            //{
+            else if (selectedProgram == "Trigonometric Calculator")
+            {
+                TrigCalculator trig = new TrigCalculator();
+                trig.Show();
+            }
 
-            //}
+            else if (selectedProgram == "Text Document Editor")
+            {
+                TrigCalculator trig = new TrigCalculator();
+                trig.Show();
+            }
+
+            else if (selectedProgram == "Calendar")
+            {
+                TrigCalculator trig = new TrigCalculator();
+                trig.Show();
+            }
+
+            else if (selectedProgram == "To-Do List")
+            {
+                TrigCalculator trig = new TrigCalculator();
+                trig.Show();
+            }
+
+            else if (selectedProgram == "Web Browser")
+            {
+                TrigCalculator trig = new TrigCalculator();
+                trig.Show();
+            }
 
             else
             {
