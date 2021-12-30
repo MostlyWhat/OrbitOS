@@ -8,7 +8,7 @@
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
-        Title="OrbitOS Internet Browser" Height="450" Width="800">
+        Title="OrbitOS Internet Browser" Height="450" Width="800" WindowState="Maximized" ResizeMode="NoResize">
 
     <Grid>
         <DockPanel>

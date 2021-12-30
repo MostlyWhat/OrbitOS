@@ -52,12 +52,16 @@ namespace OrbitOS
             await webView.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync("window.chrome.webview.postMessage(window.document.URL);");
             await webView.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync("window.chrome.webview.addEventListener(\'message\', event => alert(event.data));");
         }
+
         private void WebSearch_Click(object sender, RoutedEventArgs e)
         {
             if (webView != null && webView.CoreWebView2 != null)
             {
                 string websiteAddress = WebAddress.Text;
-                if (!websiteAddress.StartsWith("https://") || !websiteAddress.StartsWith("https://"))
+
+                UriHostNameType validDomainCheck = Uri.CheckHostName(websiteAddress);
+
+                if (validDomainCheck == UriHostNameType.Dns)
                 {
                     try
                     {
@@ -67,7 +71,7 @@ namespace OrbitOS
 
                     catch
                     {
-                        string finalWebsiteAddress = "https://" + websiteAddress;
+                        string finalWebsiteAddress = "http://" + websiteAddress;
                         webView.CoreWebView2.Navigate(finalWebsiteAddress);
                     }
 

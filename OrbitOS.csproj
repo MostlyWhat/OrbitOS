@@ -88,6 +88,7 @@
     <NewVersion>$(APPVEYOR_BUILD_VERSION)</NewVersion>
     <PackageIcon>OrbitOS.png</PackageIcon>
     <PlatformTarget>x86</PlatformTarget>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <Target Name="UpdateVersion">
