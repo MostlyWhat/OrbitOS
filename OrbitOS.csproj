@@ -19,12 +19,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CefSharp.Wpf" Version="96.0.180" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1054.31" />
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Components\TwoButtonDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Programs\Browser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Programs\AppTemplate.xaml.cs">
@@ -48,6 +51,10 @@
 
   <ItemGroup>
     <Page Update="Components\TwoButtonDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Programs\Browser.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
@@ -80,6 +87,7 @@
   <PropertyGroup>
     <NewVersion>$(APPVEYOR_BUILD_VERSION)</NewVersion>
     <PackageIcon>OrbitOS.png</PackageIcon>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
 
   <Target Name="UpdateVersion">

@@ -61,8 +61,8 @@ namespace OrbitOS
 
             else if (selectedProgram == "Web Browser")
             {
-                TrigCalculator trig = new TrigCalculator();
-                trig.Show();
+                Browser browser = new Browser();
+                browser.Show();
             }
 
             else
