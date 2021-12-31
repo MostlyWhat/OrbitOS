@@ -27,6 +27,9 @@
     <Compile Update="Components\TwoButtonDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Programs\Calendar.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Programs\Browser.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -51,6 +54,10 @@
 
   <ItemGroup>
     <Page Update="Components\TwoButtonDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Programs\Calendar.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

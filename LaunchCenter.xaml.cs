@@ -49,8 +49,8 @@ namespace OrbitOS
 
             else if (selectedProgram == "Calendar")
             {
-                TrigCalculator trig = new TrigCalculator();
-                trig.Show();
+                Calendar calendar = new Calendar();
+                calendar.Show();
             }
 
             else if (selectedProgram == "To-Do List")
