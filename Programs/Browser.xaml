@@ -8,15 +8,15 @@
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
-        Title="OrbitOS Internet Browser" Height="450" Width="800" WindowState="Maximized" ResizeMode="NoResize">
+        Title="OrbitOS Internet Browser" Height="450" Width="800" WindowState="Maximized">
 
     <Grid>
         <DockPanel>
             <DockPanel DockPanel.Dock="Top">
-                <Button x:Name="WebSearch" DockPanel.Dock="Right" Style="{StaticResource AccentButtonStyle}" Click="WebSearch_Click" Content="Search" Width="90"/>
-                <Button x:Name="WebBack" DockPanel.Dock="Left" Click="WebBack_Click" Content="&lt;" Width="90"/>
-                <Button x:Name="WebForward" DockPanel.Dock="Left" Click="WebForward_Click" Content="&gt;" Width="90"/>
-                <TextBox x:Name="WebAddress"/>
+                <Button Margin="2" x:Name="WebBack" DockPanel.Dock="Left" Click="WebBack_Click" Content="&lt;" Width="45"/>
+                <Button Margin="2" x:Name="WebForward" DockPanel.Dock="Left" Click="WebForward_Click" Content="&gt;" Width="45"/>
+                <Button Margin="2" x:Name="WebReload" DockPanel.Dock="Left" Click="WebReload_Click" Content="↻" Width="45"/>
+                <TextBox Margin="2" x:Name="WebAddress" KeyDown="OnKeyDownHandler"/>
             </DockPanel>
             <wv2:WebView2 Name = "webView"
                   Source = "https://www.google.com"/>

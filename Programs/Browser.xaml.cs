@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using ModernWpf.Controls;
 using System.Text.RegularExpressions;
 using Microsoft.Web.WebView2.Core;
+using System.Web;
 
 namespace OrbitOS
 {
@@ -52,35 +53,43 @@ namespace OrbitOS
             await webView.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync("window.chrome.webview.postMessage(window.document.URL);");
             await webView.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync("window.chrome.webview.addEventListener(\'message\', event => alert(event.data));");
         }
-
-        private void WebSearch_Click(object sender, RoutedEventArgs e)
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                WebSearch_Click();
+            }
+        }
+        private void WebSearch_Click()
         {
             if (webView != null && webView.CoreWebView2 != null)
             {
+                //need to implement search engine settings
                 string websiteAddress = WebAddress.Text;
 
-                UriHostNameType validDomainCheck = Uri.CheckHostName(websiteAddress);
+                Regex domain = new Regex("^((?!-)[A-Za-z0-9-]{1, 63}(?<!-)\\.)+[A-Za-z]{2, 6}$");
+                Regex Ipv4 = new Regex("(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])");
 
-                if (validDomainCheck == UriHostNameType.Dns)
+                bool validDomainCheck = domain.IsMatch(websiteAddress);
+                bool validIpv4Check = Ipv4.IsMatch(websiteAddress);
+
+                if (validDomainCheck == true || validIpv4Check == true || websiteAddress == "localhost")
                 {
                     try
                     {
                         string finalWebsiteAddress = "https://" + websiteAddress;
                         webView.CoreWebView2.Navigate(finalWebsiteAddress);
                     }
-
                     catch
                     {
                         string finalWebsiteAddress = "http://" + websiteAddress;
                         webView.CoreWebView2.Navigate(finalWebsiteAddress);
                     }
-
                 }
 
                 else
                 {
-                    websiteAddress = websiteAddress.Replace(" ", "+");
-                    string finalWebsiteAddress = "https://www.google.com/search?" + websiteAddress;
+                    string finalWebsiteAddress = "https://www.google.com/search?client=orbitos-browser&q=" + HttpUtility.UrlEncode(websiteAddress);
                     webView.CoreWebView2.Navigate(finalWebsiteAddress);
                 }
                 
@@ -121,6 +130,11 @@ namespace OrbitOS
                 //await dialog.ShowAsync();
                 webView.CoreWebView2.PostWebMessageAsString("OrbitOS Web Browser: Cannot go forward any further!");
             }
+        }
+
+        private void WebReload_Click(object sender, RoutedEventArgs e)
+        {
+            webView.Reload();
         }
     }
 }

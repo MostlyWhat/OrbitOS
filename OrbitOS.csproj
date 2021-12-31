@@ -68,6 +68,10 @@
     </Page>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Tools\" />
+  </ItemGroup>
+
   <PropertyGroup>
    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
@@ -79,20 +83,11 @@
    <PackageProjectUrl>https://github.com/MostlyWhat/OrbitOS</PackageProjectUrl>
    <RepositoryUrl>https://github.com/MostlyWhat/OrbitOS</RepositoryUrl>
   </PropertyGroup>
-    
-  <ItemGroup>
-    <AsmInfoFiles Include="$(ProjectRoot)\**\AssemblyInfo.cs" />
-  </ItemGroup>
 
   <PropertyGroup>
-    <NewVersion>$(APPVEYOR_BUILD_VERSION)</NewVersion>
     <PackageIcon>OrbitOS.png</PackageIcon>
     <PlatformTarget>x86</PlatformTarget>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
   </PropertyGroup>
-
-  <Target Name="UpdateVersion">
-    <FileUpdate Files="@(AsminfoFiles)" Encoding="utf-8" Regex="\[assembly:\s*AssemblyVersion\(.*\)\]" ReplacementText="[assembly: AssemblyVersion(&quot;$(APPVEYOR_BUILD_VERSION)&quot;)]" />
-  </Target>
 	
 </Project>

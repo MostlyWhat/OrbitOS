@@ -15,9 +15,9 @@ using ModernWpf.Controls;
 
 namespace OrbitOS
 {
-    /// <summary>
-    /// Interaction logic for BootLoader.xaml
-    /// </summary>
+    /// <Summary>
+    /// Interaction logic for Authenticator.xaml
+    /// </Summary>
     public partial class Authenticator : ContentDialog
     {
         public Authenticator()

@@ -12,23 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ModernWpf.Controls;
-using System.Text.RegularExpressions;
 
 namespace OrbitOS
 {
     /// <summary>
-    /// Interaction logic for ArithCalculator.xaml
+    /// Interaction logic for AppTemplate.xaml
     /// </summary>
     public partial class AppTemplate : Window
     {
         public AppTemplate()
         {
             InitializeComponent();
-        }
-        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
-        {
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
         }
 
     }
