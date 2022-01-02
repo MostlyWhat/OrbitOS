@@ -65,12 +65,12 @@ namespace OrbitOS
             if (webView != null && webView.CoreWebView2 != null)
             {
                 //need to implement search engine settings
-                string websiteAddress = WebAddress.Text;
+                string websiteAddress = HttpUtility.UrlEncode(WebAddress.Text);
 
                 Regex domain = new Regex("^((?!-)[A-Za-z0-9-]{1, 63}(?<!-)\\.)+[A-Za-z]{2, 6}$");
                 Regex Ipv4 = new Regex("(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])");
 
-                bool validDomainCheck = domain.IsMatch(websiteAddress);
+                bool validDomainCheck = Uri.IsWellFormedUriString(websiteAddress, UriKind.RelativeOrAbsolute) && domain.IsMatch(websiteAddress);
                 bool validIpv4Check = Ipv4.IsMatch(websiteAddress);
 
                 if (validDomainCheck == true || validIpv4Check == true || websiteAddress == "localhost")
