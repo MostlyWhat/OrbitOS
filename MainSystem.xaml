@@ -1,0 +1,42 @@
+﻿<Window x:Class="OrbitOS.MainSystem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:local="clr-namespace:OrbitOS"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        mc:Ignorable="d"
+        Title="OrbitOS Main System" Height="450" Width="800" WindowState="Maximized">
+
+    <Grid>
+        <ui:NavigationView x:Name="NavigationPage" Loaded="NavigationPage_Loaded" SelectionChanged="NavigationPage_SelectionChanged" ItemInvoked="NavigationPage_ItemInvoked" PaneDisplayMode="LeftCompact" IsBackEnabled="False" IsBackButtonVisible="Collapsed" PaneTitle="OrbitOS System Programs">
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem Tag="HomePage" Icon="Home" Content="Home" />
+                <ui:NavigationViewItem Tag="MathematicsPage" Icon="Calculator" Content="Mathematics">
+                    <ui:NavigationViewItem.MenuItems>
+                        <ui:NavigationViewItem Content="Arithmetic Calculator" Icon="Add" ToolTipService.ToolTip="Mail" Tag="ArithCalculator"/>
+                        <ui:NavigationViewItem Content="Trigonometric Calculator" Icon="Sync" ToolTipService.ToolTip="Calendar" Tag="TrigCalculator"/>
+                    </ui:NavigationViewItem.MenuItems>
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem Tag="Utilities" Icon="Sync" Content="Utilities">
+                    <ui:NavigationViewItem.MenuItems>
+                        <ui:NavigationViewItem Content="Mail" Icon="Mail" ToolTipService.ToolTip="Mail" Tag="SamplePage3"/>
+                        <ui:NavigationViewItem Content="Calendar" Icon="Calendar" ToolTipService.ToolTip="Calendar" Tag="SamplePage4"/>
+                    </ui:NavigationViewItem.MenuItems>
+                </ui:NavigationViewItem>
+            </ui:NavigationView.MenuItems>
+
+            <ui:NavigationView.AutoSuggestBox>
+                <ui:AutoSuggestBox QueryIcon="Find" AutomationProperties.Name="Search" />
+            </ui:NavigationView.AutoSuggestBox>
+
+            <ui:NavigationView.FooterMenuItems>
+                <ui:NavigationViewItem Content="Updates" Tag="Updates" Icon="Sync" />
+                <ui:NavigationViewItem Content="Help" Tag="Help" Icon="Help" />
+                <ui:NavigationViewItem Content="About" Tag="About" Icon="Contact" />
+            </ui:NavigationView.FooterMenuItems>
+            <ui:Frame x:Name="contentFrame" Background="Black"/>
+        </ui:NavigationView>
+    </Grid>
+</Window>

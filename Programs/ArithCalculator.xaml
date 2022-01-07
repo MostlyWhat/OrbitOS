@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:local="clr-namespace:OrbitOS"
-        ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
         Title="ArithCalculator" Height="450" Width="800">
     <Grid>

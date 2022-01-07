@@ -19,6 +19,7 @@
                         <ComboBoxItem Content="Calendar"/>
                         <ComboBoxItem Content="To-Do List"/>
                         <ComboBoxItem Content="Web Browser"/>
+                        <ComboBoxItem Content="Interface Test"/>
                     </ComboBox>
                     <Label Content="OrbitOS Launch Center" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" FontSize="48"/>
                     <Label Content="Select Program to Launch" HorizontalAlignment="Center" Margin="0,137,0,0" VerticalAlignment="Top" FontSize="24"/>

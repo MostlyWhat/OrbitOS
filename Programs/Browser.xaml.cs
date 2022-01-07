@@ -60,6 +60,34 @@ namespace OrbitOS
                 WebSearch_Click();
             }
         }
+        private static bool IsValidDomainName(string name)
+        {
+            return Uri.CheckHostName(name) != UriHostNameType.Unknown;
+        }
+
+        public bool IsValidateDomainName(string domainName)
+        {
+            bool isDomainExist = false;
+            System.Net.IPHostEntry host;
+            try
+            {
+                host = System.Net.Dns.GetHostEntry(domainName);
+                if (host != null)
+                {
+                    isDomainExist = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message == "No such host is known")
+                {
+                    isDomainExist = false;
+                }
+            }
+
+            return isDomainExist;
+        }
+
         private void WebSearch_Click()
         {
             if (webView != null && webView.CoreWebView2 != null)
@@ -67,13 +95,13 @@ namespace OrbitOS
                 //need to implement search engine settings
                 string websiteAddress = HttpUtility.UrlEncode(WebAddress.Text);
 
-                Regex domain = new Regex("^((?!-)[A-Za-z0-9-]{1, 63}(?<!-)\\.)+[A-Za-z]{2, 6}$");
-                Regex Ipv4 = new Regex("(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])");
+                Regex domainRegex = new Regex("^((?!-)[A-Za-z0-9-]{1, 63}(?<!-)\\.)+[A-Za-z]{2, 6}$");
 
-                bool validDomainCheck = Uri.IsWellFormedUriString(websiteAddress, UriKind.RelativeOrAbsolute) && domain.IsMatch(websiteAddress);
-                bool validIpv4Check = Ipv4.IsMatch(websiteAddress);
+                bool validDomainCheck = IsValidDomainName(websiteAddress) == true && domainRegex.IsMatch(websiteAddress);
 
-                if (validDomainCheck == true || validIpv4Check == true || websiteAddress == "localhost")
+                bool IsValidDomainNameCheck = IsValidateDomainName(websiteAddress);
+
+                if (IsValidDomainNameCheck == true || validDomainCheck == true || websiteAddress == "localhost")
                 {
                     try
                     {
@@ -89,7 +117,8 @@ namespace OrbitOS
 
                 else
                 {
-                    string finalWebsiteAddress = "https://www.google.com/search?client=orbitos-browser&q=" + HttpUtility.UrlEncode(websiteAddress);
+                    string editedWebsiteAddress = websiteAddress.Replace(" ", "+");
+                    string finalWebsiteAddress = "https://www.google.com/search?client=orbitos-browser&q=" + editedWebsiteAddress;
                     webView.CoreWebView2.Navigate(finalWebsiteAddress);
                 }
                 

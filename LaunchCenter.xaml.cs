@@ -65,6 +65,12 @@ namespace OrbitOS
                 browser.Show();
             }
 
+            else if (selectedProgram == "Interface Test")
+            {
+                MainSystem mainsystem = new MainSystem();
+                mainsystem.Show();
+            }
+
             else
             {
                 var dialog = new NormalDialog("OrbitOS Launch Center", "Please Select an Existing Program to Launch!", "OK");
