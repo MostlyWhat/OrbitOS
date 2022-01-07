@@ -17,22 +17,24 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Content="Add" Style="{StaticResource AccentButtonStyle}" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="22" x:Name="simpleAdd" Click="simpleAdd_Click"/>
-        <Button Content="Subtract" Style="{StaticResource AccentButtonStyle}" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="22" x:Name="simpleSub" Click="simpleSub_Click"/>
-        <Button Content="Multiply" Style="{StaticResource AccentButtonStyle}" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="22" x:Name="simpleMul" Click="simpleMul_Click"/>
-        <Button Content="Divide" Style="{StaticResource AccentButtonStyle}" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="22" x:Name="simpleDiv" Click="simpleDiv_Click" />
-        <Button Content="Clear Input and Output" Grid.Row="3" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="22" x:Name="simpleClear" Click="simpleClear_Click" Grid.ColumnSpan="2"/>
-        <Label Content="Input Data" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" Grid.ColumnSpan="2" FontSize="48"/>
-        <Label Content="Output Data" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" Grid.ColumnSpan="2" FontSize="48"/>
-        <TextBox ui:ControlHelper.Header="Enter Value 1:" ui:ControlHelper.PlaceholderText="Value 1" PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" TextWrapping="Wrap" FontSize="22" x:Name="value1"/>
-        <TextBox ui:ControlHelper.Header="Enter Value 2:" ui:ControlHelper.PlaceholderText="Value 2" PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" TextWrapping="Wrap" FontSize="22" x:Name="value2"/>
-        <TextBox ui:ControlHelper.Header="Output Value:" ui:ControlHelper.PlaceholderText="Output Value" PreviewTextInput="NumberValidationTextBox" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" TextWrapping="Wrap" FontSize="22" x:Name="simpleValue"/>
-        <Label Content="Enter Value 1 and 2&#xD;&#xA;Press Operations to Calculate" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Arithmetic Calculator" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" FontSize="52" Margin="10" />
+        <Button Content="Add" Style="{StaticResource AccentButtonStyle}" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="22" x:Name="simpleAdd" Click="simpleAdd_Click"/>
+        <Button Content="Subtract" Style="{StaticResource AccentButtonStyle}" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="22" x:Name="simpleSub" Click="simpleSub_Click"/>
+        <Button Content="Multiply" Style="{StaticResource AccentButtonStyle}" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="22" x:Name="simpleMul" Click="simpleMul_Click"/>
+        <Button Content="Divide" Style="{StaticResource AccentButtonStyle}" Grid.Row="5" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="22" x:Name="simpleDiv" Click="simpleDiv_Click" />
+        <Button Content="Clear Input and Output" Grid.Row="4" Grid.RowSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="22" x:Name="simpleClear" Click="simpleClear_Click" Grid.ColumnSpan="2"/>
+        <Label Content="Input Data" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" Grid.ColumnSpan="2" FontSize="48"/>
+        <Label Content="Output Data" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" Grid.ColumnSpan="2" FontSize="48"/>
+        <TextBox ui:ControlHelper.Header="Enter Value 1:" ui:ControlHelper.PlaceholderText="Value 1" PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" TextWrapping="Wrap" FontSize="22" x:Name="value1"/>
+        <TextBox ui:ControlHelper.Header="Enter Value 2:" ui:ControlHelper.PlaceholderText="Value 2" PreviewTextInput="NumberValidationTextBox" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" TextWrapping="Wrap" FontSize="22" x:Name="value2"/>
+        <TextBox ui:ControlHelper.Header="Output Value:" ui:ControlHelper.PlaceholderText="Output Value" PreviewTextInput="NumberValidationTextBox" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" TextWrapping="Wrap" FontSize="22" x:Name="simpleValue"/>
+        <Label Content="Enter Value 1 and 2&#xD;&#xA;Press Operations to Calculate" VerticalContentAlignment="Center" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="20" FontWeight="Bold"/>
     </Grid>
 </ui:Page>

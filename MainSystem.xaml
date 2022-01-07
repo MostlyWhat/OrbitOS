@@ -32,9 +32,9 @@
             </ui:NavigationView.AutoSuggestBox>
 
             <ui:NavigationView.FooterMenuItems>
-                <ui:NavigationViewItem Content="Updates" Tag="Updates" Icon="Sync" />
-                <ui:NavigationViewItem Content="Help" Tag="Help" Icon="Help" />
-                <ui:NavigationViewItem Content="About" Tag="About" Icon="Contact" />
+                <ui:NavigationViewItem Content="Updates" Tag="UpdatesPage" Icon="Sync" />
+                <ui:NavigationViewItem Content="Help" Tag="HelpPage" Icon="Help" />
+                <ui:NavigationViewItem Content="About" Tag="AboutPage" Icon="Contact" />
             </ui:NavigationView.FooterMenuItems>
             <ui:Frame x:Name="contentFrame" Background="Black"/>
         </ui:NavigationView>

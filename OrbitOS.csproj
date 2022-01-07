@@ -30,6 +30,9 @@
     <Compile Update="Pages\HomePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\AboutPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Programs\Calendar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -61,6 +64,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\HomePage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AboutPage.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

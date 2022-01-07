@@ -57,6 +57,11 @@ namespace OrbitOS
                     {
                         contentFrame.Navigate(typeof(Pages.TrigCalculator));
                     }
+
+                    else if (selectedItem == "AboutPage")
+                    {
+                        contentFrame.Navigate(typeof(Pages.AboutPage));
+                    }
                 }
             }
         }
