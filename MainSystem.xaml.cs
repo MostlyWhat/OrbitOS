@@ -68,6 +68,11 @@ namespace OrbitOS
                         contentFrame.Navigate(typeof(Pages.CalendarPage));
                     }
 
+                    else if (selectedItem == "Web Browser")
+                    {
+                        contentFrame.Navigate(typeof(Pages.BrowserPage));
+                    }
+
                     else if (selectedItem == "AboutPage")
                     {
                         contentFrame.Navigate(typeof(Pages.AboutPage));

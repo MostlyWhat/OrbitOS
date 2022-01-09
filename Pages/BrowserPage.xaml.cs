@@ -10,25 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ModernWpf.Controls;
 using System.Text.RegularExpressions;
 using Microsoft.Web.WebView2.Core;
 using System.Web;
 
-namespace OrbitOS
+namespace OrbitOS.Pages
 {
     /// <summary>
-    /// Interaction logic for ArithCalculator.xaml
+    /// Interaction logic for BrowserPage.xaml
     /// </summary>
-    public partial class Browser : Window
+    public partial class BrowserPage
     {
-        public Browser()
+        public BrowserPage()
         {
             InitializeComponent();
             webView.NavigationStarting += EnsureHttps;
             InitializeAsync();
         }
+
         void EnsureHttps(object sender, CoreWebView2NavigationStartingEventArgs args)
         {
             String uri = args.Uri;
@@ -121,7 +122,7 @@ namespace OrbitOS
                     string finalWebsiteAddress = "https://www.google.com/search?client=orbitos-browser&q=" + editedWebsiteAddress;
                     webView.CoreWebView2.Navigate(finalWebsiteAddress);
                 }
-                
+
             }
 
             else

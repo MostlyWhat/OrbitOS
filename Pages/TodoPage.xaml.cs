@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,9 +27,45 @@ namespace OrbitOS.Pages
             InitialLoad();
         }
 
+        public static string currentDirectory = Directory.GetCurrentDirectory();
+        public static string dirpath = currentDirectory + @"\Config\";
+        public static string path = currentDirectory + @"\Config\ToDo.txt";
+        
         private void InitialLoad()
         {
-            ToDoListBox.Items.Add("Should be saved data");
+            if (!Directory.Exists(dirpath))
+            {
+                Directory.CreateDirectory(dirpath);
+                File.Create(path);
+            }
+
+            else
+            {
+                if (!File.Exists(path))
+                {
+                    using (StreamReader sr = File.OpenText(path))
+                    {
+                        string scanner = "";
+                        while ((scanner = sr.ReadLine()) != null)
+                        {
+                            ToDoListBox.Items.Add(scanner);
+                        }
+                    }
+                }
+
+                else
+                {
+                    File.CreateText(path);
+                    using (StreamReader sr = File.OpenText(path))
+                    {
+                        string scanner = "";
+                        while ((scanner = sr.ReadLine()) != null)
+                        {
+                            ToDoListBox.Items.Add(scanner);
+                        }
+                    }
+                }
+            }
         }
 
         private async void AddToDo(object sender, RoutedEventArgs e)
@@ -38,6 +75,10 @@ namespace OrbitOS.Pages
                 string InputString = InputData.Text;
 
                 ToDoListBox.Items.Add(InputString);
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    sw.WriteLine(InputString);
+                }
                 InputData.Text = "";
                 ToDoListBox.Focus();
             }
@@ -64,6 +105,11 @@ namespace OrbitOS.Pages
         private void ClearToDo(object sender, RoutedEventArgs e)
         {
             ToDoListBox.Items.Clear();
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+                File.Create(path);
+            }
         }
     }
 }

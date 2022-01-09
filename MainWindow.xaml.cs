@@ -86,11 +86,11 @@ namespace OrbitOS
             LoginWindow();
         }
 
-        private void openInterface(object sender, RoutedEventArgs e)
-        {
-            LaunchCenter launcher = new LaunchCenter();
-            launcher.Show();
-        }
+        //private void openInterface(object sender, RoutedEventArgs e)
+        //{
+        //   LaunchCenter launcher = new LaunchCenter();
+        //    launcher.Show();
+        //}
 
         private void ClosingProgram(object sender, CancelEventArgs e)
         {

@@ -14,7 +14,7 @@
         <Label Content="Welcome" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,60,0,0" VerticalAlignment="Top" Height="111" Width="206" FontSize="48"/>
         <Label Content="Username" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,117,0,0" VerticalAlignment="Top" Height="111" Width="698" FontSize="48" x:Name="usernameLabel"/>
         <Button Content="Log Out OrbitOS" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Height="50" Width="250" Click="logoutButton"/>
-        <Button Content="Open OrbitOS Interface" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Center" Margin="0,198,0,0" VerticalAlignment="Top" Height="50" Width="250" Click="openInterface"/>
+        <Button Content="Open OrbitOS Interface" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Center" Margin="0,198,0,0" VerticalAlignment="Top" Height="50" Width="250"/>
         <Rectangle HorizontalAlignment="Center" Height="434" Stroke="Black" VerticalAlignment="Center" Width="800" Fill="Black" x:Name="contentLocker"/>
     </Grid>
 </Window>

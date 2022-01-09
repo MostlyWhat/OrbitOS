@@ -36,19 +36,10 @@
     <Compile Update="Pages\CalendarPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\BrowserPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\TodoPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Programs\Calendar.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Programs\Browser.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Programs\AppTemplate.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Programs\TrigCalculator.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -81,23 +72,11 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\BrowserPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\TodoPage.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Programs\Calendar.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Programs\Browser.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Programs\AppTemplate.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Programs\TrigCalculator.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
