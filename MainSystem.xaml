@@ -10,19 +10,19 @@
         Title="OrbitOS Main System" Height="450" Width="800" WindowState="Maximized">
 
     <Grid>
-        <ui:NavigationView x:Name="NavigationPage" Loaded="NavigationPage_Loaded" SelectionChanged="NavigationPage_SelectionChanged" ItemInvoked="NavigationPage_ItemInvoked" PaneDisplayMode="LeftCompact" IsBackEnabled="False" IsBackButtonVisible="Collapsed" PaneTitle="OrbitOS System Programs">
+        <ui:NavigationView x:Name="NavigationPage" Loaded="NavigationPage_Loaded" SelectionChanged="NavigationPage_SelectionChanged" PaneDisplayMode="LeftCompact" IsBackEnabled="False" IsBackButtonVisible="Collapsed" PaneTitle="OrbitOS System Programs">
             <ui:NavigationView.MenuItems>
                 <ui:NavigationViewItem Tag="HomePage" Icon="Home" Content="Home" />
                 <ui:NavigationViewItem Tag="MathematicsPage" Icon="Calculator" Content="Mathematics">
                     <ui:NavigationViewItem.MenuItems>
-                        <ui:NavigationViewItem Content="Arithmetic Calculator" Icon="Add" ToolTipService.ToolTip="Mail" Tag="ArithCalculator"/>
-                        <ui:NavigationViewItem Content="Trigonometric Calculator" Icon="Sync" ToolTipService.ToolTip="Calendar" Tag="TrigCalculator"/>
+                        <ui:NavigationViewItem Content="Arithmetic Calculator" Icon="Add" ToolTipService.ToolTip="Calculates Value using Artihmetic Operators" Tag="ArithCalculator"/>
+                        <ui:NavigationViewItem Content="Trigonometric Calculator" Icon="Sync" ToolTipService.ToolTip="Calculates Value using Trigonometric Operator" Tag="TrigCalculator"/>
                     </ui:NavigationViewItem.MenuItems>
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem Tag="Utilities" Icon="Sync" Content="Utilities">
+                <ui:NavigationViewItem Tag="Utilities" Icon="Repair" Content="Utilities">
                     <ui:NavigationViewItem.MenuItems>
-                        <ui:NavigationViewItem Content="Mail" Icon="Mail" ToolTipService.ToolTip="Mail" Tag="SamplePage3"/>
-                        <ui:NavigationViewItem Content="Calendar" Icon="Calendar" ToolTipService.ToolTip="Calendar" Tag="SamplePage4"/>
+                        <ui:NavigationViewItem Content="To-Do List" Icon="Sort" ToolTipService.ToolTip="To-Do List" Tag="To-Do List"/>
+                        <ui:NavigationViewItem Content="Calendar" Icon="Calendar" ToolTipService.ToolTip="Calendar" Tag="Calendar"/>
                     </ui:NavigationViewItem.MenuItems>
                 </ui:NavigationViewItem>
             </ui:NavigationView.MenuItems>

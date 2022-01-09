@@ -33,6 +33,7 @@ namespace OrbitOS.Pages
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        // For Normal Calculator
         private void NormalClear(object sender, RoutedEventArgs e)
         {
             angleValue.Text = "";
@@ -88,5 +89,7 @@ namespace OrbitOS.Pages
                 normalOutput.Text = "0";
             }
         }
+
+        // For Arc Operations
     }
 }

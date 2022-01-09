@@ -58,17 +58,22 @@ namespace OrbitOS
                         contentFrame.Navigate(typeof(Pages.TrigCalculator));
                     }
 
+                    else if (selectedItem == "To-Do List")
+                    {
+                        contentFrame.Navigate(typeof(Pages.ToDoPage));
+                    }
+
+                    else if (selectedItem == "Calendar")
+                    {
+                        contentFrame.Navigate(typeof(Pages.CalendarPage));
+                    }
+
                     else if (selectedItem == "AboutPage")
                     {
                         contentFrame.Navigate(typeof(Pages.AboutPage));
                     }
                 }
             }
-        }
-
-        private void NavigationPage_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
-        {
-
         }
     }
 }
