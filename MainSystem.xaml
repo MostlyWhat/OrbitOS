@@ -19,7 +19,7 @@
                         <ui:NavigationViewItem Content="Trigonometric Calculator" Icon="Sync" ToolTipService.ToolTip="Calculates Value using Trigonometric Operator" Tag="TrigCalculator"/>
                     </ui:NavigationViewItem.MenuItems>
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem Tag="Web Browser" Icon="Globe" ToolTipService.ToolTip="Web Browser"></ui:NavigationViewItem>
+                <ui:NavigationViewItem Tag="Web Browser" Content="Web Browser" Icon="Globe" ToolTipService.ToolTip="Web Browser"></ui:NavigationViewItem>
                 <ui:NavigationViewItem Tag="Utilities" Icon="Repair" Content="Utilities">
                     <ui:NavigationViewItem.MenuItems>
                         <ui:NavigationViewItem Content="To-Do List" Icon="Sort" ToolTipService.ToolTip="To-Do List" Tag="To-Do List"/>
