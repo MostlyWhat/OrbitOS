@@ -38,7 +38,7 @@
                 <ui:NavigationViewItem Content="About" Tag="AboutPage" Icon="Contact" />
             </ui:NavigationView.FooterMenuItems>
             <ui:Frame x:Name="contentFrame" Background="Black"/>
-            
+
         </ui:NavigationView>
     </Grid>
 </Window>
