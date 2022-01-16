@@ -9,8 +9,11 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SettingsPage">
 
-    <Grid>
-        <TextBlock Text="OrbitOS MainFrame" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" Margin="10,10,0,0" Width="780" Grid.ColumnSpan="2" Height="66" />
-        <TextBlock Text="Welcome Anonymous!" HorizontalAlignment="Left" Style="{StaticResource TitleTextBlockStyle}" Margin="10,81,0,296" x:Name="usernameText" Grid.ColumnSpan="2" Width="780" FontSize="36" />
-    </Grid>
+    <DockPanel VerticalAlignment="Center">
+        <Grid>
+            <Image VerticalAlignment="Center" Source="/Pages/OrbitOS.png" Margin="10,10,10,184" Width="150" HorizontalAlignment="Center"></Image>
+            <Label VerticalAlignment="Center" HorizontalContentAlignment="Center" Content="OrbitOS MainFrame" FontSize="48" Width="780" Height="66" HorizontalAlignment="Center" Margin="0,100,0,0" />
+            <Label VerticalAlignment="Center" HorizontalContentAlignment="Center" Content="Welcome Anonymous!" x:Name="usernameText" Width="780" FontSize="36" HorizontalAlignment="Center" Margin="0,230,0,0" />
+        </Grid>
+    </DockPanel>
 </ui:Page>

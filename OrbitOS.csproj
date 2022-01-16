@@ -15,10 +15,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\OrbitOS.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dragablz" Version="0.0.3.223" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1054.31" />
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
   </ItemGroup>
@@ -84,6 +89,10 @@
 
   <ItemGroup>
     <Folder Include="Tools\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Pages\OrbitOS.png" />
   </ItemGroup>
 
   <PropertyGroup>

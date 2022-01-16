@@ -28,7 +28,7 @@ namespace OrbitOS.Pages
 
         private void InitialLoad()
         {
-            usernameText.Text = "Welcome " + Environment.UserName + "!";
+            usernameText.Content = "Welcome " + Environment.UserName + "!";
         }
     }
 }
