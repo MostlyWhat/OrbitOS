@@ -73,6 +73,16 @@ namespace OrbitOS
                         contentFrame.Navigate(typeof(Pages.BrowserPage));
                     }
 
+                    else if (selectedItem == "UpdatesPage")
+                    {
+                        contentFrame.Navigate(typeof(Pages.UpdatesPage));
+                    }
+
+                    else if (selectedItem == "HelpPage")
+                    {
+                        contentFrame.Navigate(typeof(Pages.HelpPage));
+                    }
+
                     else if (selectedItem == "AboutPage")
                     {
                         contentFrame.Navigate(typeof(Pages.AboutPage));
