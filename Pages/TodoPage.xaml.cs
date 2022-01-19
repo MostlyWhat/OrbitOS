@@ -36,6 +36,7 @@ namespace OrbitOS.Pages
             {
                 string InputString = InputData.Text;
                 ToDoListBox.Items.Add(InputString);
+                InputData.Text = "";
                 ToDoListBox.Focus();
             }
             else
