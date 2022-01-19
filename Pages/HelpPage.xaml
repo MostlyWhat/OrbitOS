@@ -11,5 +11,6 @@
 
     <Grid>
         <TextBlock Text="OrbitOS Help" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource TitleTextBlockStyle}" Margin="10" />
+        <Label FontSize="48" HorizontalAlignment="Center" Margin="0,79,0,10" Width="780" Content="Currently No Issues are Found." />
     </Grid>
 </ui:Page>
